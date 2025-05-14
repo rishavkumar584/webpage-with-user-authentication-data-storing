@@ -1,0 +1,72 @@
+<?php
+
+session_start();
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Session Page.net</title>
+</head>
+
+<body>
+
+<?php
+
+
+echo $_SESSION["username"];
+$Email = $_SESSION["username"];
+
+include 'databaseconnect.php';
+    
+
+	$query="SELECT * FROM user WHERE username='$Email'";
+	$result=mysqli_query($con,$query);
+	$count=mysqli_num_rows($result);
+
+	if($count>0)
+	{
+		while($row = mysqli_fetch_assoc($result))
+		{
+			echo $row['username'];
+			echo $row['password'];
+			
+			echo "Login Successful";
+		?>
+	
+	<center>
+	<font face="Bookman Old Style" size="6">TATA Associates</font>
+	 <br><br>
+
+    <table border="3" width="80%" height="500px">
+		
+		<tr><td><a href="Left_table_bar.php" name="profile">Profile</a></td>
+			<td  bgcolor="#0086b3" width="80%" rowspan="8">
+				
+				IMAGE HERE!!
+				<br>
+
+				Name=<?php echo $row['username']; ?>
+				
+
+			</td></tr>
+		<tr><td><a href="#Account_statements">Accounts Statments</a></td></tr>
+		<tr><td>
+
+			<form action="Right_display.php" method="POST">
+
+			<input type="submit" name="profile" value="Profile"></form></td></tr>
+		
+		<tr><td><a href="#Memebership_details">Membership Details</a></td></tr>				
+		<tr><td><a href="#Attendace_details">Attendance Details</a></td></tr>
+		<tr><td><a href="#Apply_leave">Apply for leave</a></td></tr>
+		<tr><td><a href="#Manager_details">Manager Details</a></td></tr>
+		<tr><td><a href="#Lodge_complaint">Lodge Complaint</a></td></tr>
+		<tr><td><a href="">Something Here</a></td></tr>
+				
+	</table>
+		
+			     
+</body>
+</html>

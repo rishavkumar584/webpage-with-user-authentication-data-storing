@@ -1,0 +1,28 @@
+	<?php
+
+session_start();
+
+include 'databaseconnect.php';
+
+$username=$_POST['username'];
+echo '$username';
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration_Sucessfull</title>
+</head>
+<body>
+
+	<center><font face="Bookamn Old Style" size="6">Sucessfully Registred</font>
+		<br><br><font face="Bookamn Old Style" size="4">You have been sucessfully registred<br>
+			Click on the login button & login with your username and password<br></font>
+			<br><br>
+			<form action="http://localhost/Company/Tata_Login_Page.html">
+			<input type="submit" name="Login" value="Login"/>
+		</form>
+
+		</center>
+	</body>
+	</html>

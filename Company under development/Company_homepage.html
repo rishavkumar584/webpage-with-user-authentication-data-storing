@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 11%;
+  width: 95%;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-left:1px solid #bbb;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+.header {
+  
+  width: 95%;
+  background: #FFFFFF;
+  height: 40%;
+  top: 0%;
+  color: #000000;
+
+}
+.sticky {
+  position: fixed;
+  top: 0%;
+  width: 95%;
+  height: 20%;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky + .content {
+  padding-top: 0%;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="header" id="myHeader">
+  <br>
+  <center>
+<font face="Kristen ITC" size="5">
+  TATA Associates</font>
+</center>
+</div>
+<br>
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#news">Events</a></li>
+  <li><a href="#news">Tender</a></li>
+  <li><a href="#news">Membership</a></li>
+  <li><a href="#news">Shop</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li style="float:right"><a href="Tata_Login_Page.html">Login / Register</a></li>
+  </ul>
+
+<div class="content">
+  <br><br>
+  <table border="3" width="90%" align="center">
+    <tr>
+      <td width="50%" align="center">
+      <img src="Logo.jpg" width="50%" height="50%">
+      </td>
+      <td width="30%">
+        <font face="Bookman Old Style" size="4"><b>Current Events</b></font>
+      </td>
+    </tr>
+  </table>
+
+  
+  
+
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+
+
+function myFunction() {
+    header.classList.add("sticky");
+  } 
+
+</script>
+
+</body>
+</html>
+
+
